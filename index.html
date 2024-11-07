@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寻宝游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="libraryScene" class="scene active">
+        <h1>在古老的图书馆里找到了第一个线索...</h1>
+        <p>你面前有两本看起来古老的书籍，一本关于历史，一本关于神话。你决定阅读哪一本？</p>
+        <button class="bounceButton" onclick="chooseHistory()">历史</button>
+        <button class="bounceButton" onclick="chooseMyth()">神话</button>
+    </div>
+    <div id="historyClueScene" class="scene">
+        <h1>你选择了历史书籍...</h1>
+        <p>书中提到了一个古老的国王，他的宝藏被隐藏在...</p>
+        <button class="bounceButton" onclick="navigateToDecodeScene()">继续冒险</button>
+    </div>
+    <div id="mythClueScene" class="scene">
+        <h1>你选择了神话书籍...</h1>
+        <p>书中描述了一个被神守护的神秘岛屿，宝藏可能在那里...</p>
+        <button class="bounceButton" onclick="navigateToDecodeScene()">继续冒险</button>
+    </div>
+    <div id="decodeScene" class="scene">
+        <h1>解码成功!宝藏在一座古老的神庙中...</h1>
+        <p>你面前有两条通往神庙的路，一条似乎更安全，而另一条则隐藏着未知的危险。你选择哪条路？</p>
+        <button class="bounceButton" onclick="chooseSafePath()">安全路径</button>
+        <button class="bounceButton" onclick="chooseDangerousPath()">危险路径</button>
+    </div>
+    <div id="jungleScene" class="scene">
+        <h1>成功穿越丛林！</h1>
+        <button class="bounceButton" onclick="navigateToPuzzleScene()">继续冒险</button>
+    </div>
+    <div id="puzzleScene" class="scene">
+        <h1>谜题解开，找到了隐藏的通道！</h1>
+        <button class="bounceButton" onclick="navigateToTempleScene()">继续冒险</button>
+    </div>
+    <div id="templeScene" class="scene">
+        <h1>找到了一个神秘的箱子...</h1>
+        <p>宝箱被一个复杂的锁保护着，你可以尝试破解它，或者寻找其他可能的开关。</p>
+        <button class="bounceButton" onclick="tryToPickLock()">尝试开锁</button>
+        <button class="bounceButton" onclick="searchForSwitch()">寻找开关</button>
+    </div>
+    <div id="treasureScene" class="scene">
+        <h1 class="fadeIn">恭喜!你找到了传说中的宝藏!</h1>
+        <div class="icon treasure"></div>
+        <button class="bounceButton" onclick="restartGame()">重新开始冒险</button>
+    </div>
+    <div id="failureScene" class="scene">
+        <h1 class="fadeIn">任务失败！</h1>
+        <p>你遇到了难以克服的困难。你需要找到新的方法来继续你的冒险。</p>
+        <button class="bounceButton" onclick="restartGame()">再试一次</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
